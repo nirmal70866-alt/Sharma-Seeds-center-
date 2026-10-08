@@ -4,276 +4,603 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sharma Seeds Center</title>
+<title>Sharma Seeds Center | Seeds, Fertilizers & Farm Products</title>
 
 <style>
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
+  box-sizing:border-box;
 }
 
 body{
-  font-family:Arial, sans-serif;
-  background:#f7faf7;
-  color:#17221a;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#fff;
+  color:#222;
+}
+
+/* HEADER */
+
+.topbar{
+  background:#f7f7f7;
+  padding:8px 5%;
+  font-size:12px;
+  color:#555;
+  text-align:right;
 }
 
 header{
-  background:#ffffff;
-  padding:16px 5%;
+  background:#fff;
+  border-bottom:1px solid #e5e5e5;
+  padding:14px 5%;
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  border-bottom:1px solid #e2e8e3;
+  gap:25px;
   position:sticky;
   top:0;
-  z-index:10;
+  z-index:100;
 }
 
 .logo{
-  font-size:20px;
-  font-weight:bold;
-  color:#176b3a;
+  font-size:21px;
+  font-weight:800;
+  white-space:nowrap;
+  color:#111;
+}
+
+.logo span{
+  color:#ff5a1f;
+}
+
+.search{
+  flex:1;
+  display:flex;
+  max-width:650px;
+  height:44px;
+}
+
+.search input{
+  width:100%;
+  border:1px solid #ddd;
+  border-right:none;
+  padding:0 16px;
+  outline:none;
+  font-size:14px;
+  border-radius:6px 0 0 6px;
+  background:#fafafa;
+}
+
+.search button{
+  width:55px;
+  border:none;
+  background:#ff5a1f;
+  color:#fff;
+  border-radius:0 6px 6px 0;
+  font-size:18px;
+}
+
+.header-links{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  font-size:13px;
+  white-space:nowrap;
+}
+
+.header-links div{
+  cursor:pointer;
 }
 
 .cart{
-  background:#176b3a;
-  color:white;
-  padding:10px 15px;
-  border-radius:9px;
-  font-size:14px;
-  font-weight:bold;
+  font-weight:700;
 }
 
+/* NAV */
+
+.nav{
+  display:flex;
+  gap:28px;
+  padding:13px 5%;
+  border-bottom:1px solid #eee;
+  overflow-x:auto;
+  white-space:nowrap;
+}
+
+.nav a{
+  text-decoration:none;
+  color:#333;
+  font-size:14px;
+  font-weight:600;
+}
+
+/* HERO */
+
 .hero{
-  padding:65px 5%;
-  background:#edf6ef;
+  margin:20px 5%;
+  min-height:260px;
+  border-radius:10px;
+  background:#f2f2f2;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  overflow:hidden;
+}
+
+.hero-content{
+  padding:35px 6%;
+  max-width:600px;
+}
+
+.hero small{
+  color:#ff5a1f;
+  font-weight:800;
+  text-transform:uppercase;
 }
 
 .hero h1{
-  font-size:48px;
-  line-height:1.05;
-  margin-bottom:18px;
-}
-
-.hero h1 span{
-  color:#176b3a;
+  font-size:38px;
+  line-height:1.15;
+  margin:10px 0;
 }
 
 .hero p{
-  max-width:560px;
-  color:#637067;
-  font-size:16px;
+  color:#666;
   line-height:1.6;
-  margin-bottom:25px;
+  margin-bottom:20px;
 }
 
-.shop{
-  display:inline-block;
-  background:#176b3a;
-  color:white;
-  text-decoration:none;
-  padding:14px 21px;
-  border-radius:10px;
-  font-weight:bold;
+.hero button{
+  background:#ff5a1f;
+  color:#fff;
+  border:none;
+  padding:12px 22px;
+  border-radius:5px;
+  font-weight:700;
 }
+
+.hero-art{
+  width:40%;
+  height:100%;
+  min-height:260px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:100px;
+  background:#ededed;
+}
+
+/* SECTIONS */
 
 .section{
-  padding:50px 5%;
+  padding:25px 5%;
 }
 
-.section h2{
-  font-size:28px;
-  margin-bottom:25px;
+.section-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
 }
+
+.section-title h2{
+  font-size:22px;
+}
+
+.view{
+  color:#ff5a1f;
+  font-size:13px;
+  font-weight:700;
+}
+
+/* CATEGORIES */
 
 .categories{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  padding-bottom:5px;
 }
 
 .category{
-  background:white;
-  border:1px solid #e1e8e2;
-  border-radius:15px;
-  padding:22px;
+  min-width:125px;
+  border:1px solid #e7e7e7;
+  background:#fff;
+  padding:18px 12px;
+  text-align:center;
+  border-radius:7px;
 }
 
-.icon{
-  font-size:32px;
-  margin-bottom:15px;
+.category-icon{
+  height:65px;
+  width:65px;
+  margin:auto auto 10px;
+  border-radius:50%;
+  background:#f5f5f5;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
 }
 
 .category h3{
-  margin-bottom:6px;
-}
-
-.category p{
-  color:#68766d;
   font-size:13px;
 }
+
+/* PRODUCTS */
 
 .products{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:15px;
+  gap:16px;
 }
 
 .product{
-  background:white;
-  border:1px solid #e1e8e2;
-  border-radius:15px;
+  background:#fff;
+  border:1px solid #e4e4e4;
+  border-radius:7px;
   overflow:hidden;
+  transition:.2s;
+}
+
+.product:hover{
+  box-shadow:0 5px 18px rgba(0,0,0,.08);
 }
 
 .product-image{
-  height:170px;
-  background:#f0f6ef;
+  height:190px;
+  background:#f7f7f7;
   display:flex;
-  justify-content:center;
   align-items:center;
-  font-size:55px;
+  justify-content:center;
+  font-size:70px;
 }
 
 .product-info{
-  padding:16px;
+  padding:15px;
 }
 
-.tag{
-  color:#176b3a;
+.product-name{
+  font-size:15px;
+  line-height:1.4;
+  margin-bottom:7px;
+}
+
+.rating{
+  display:inline-block;
+  background:#16843d;
+  color:#fff;
+  padding:3px 6px;
+  border-radius:3px;
   font-size:11px;
-  font-weight:bold;
-  text-transform:uppercase;
-}
-
-.product h3{
-  font-size:16px;
-  margin:8px 0;
+  margin-bottom:9px;
 }
 
 .price{
   font-size:18px;
-  font-weight:bold;
-  margin-bottom:13px;
+  font-weight:800;
+}
+
+.old-price{
+  color:#888;
+  text-decoration:line-through;
+  font-size:12px;
+  margin-left:5px;
+}
+
+.discount{
+  color:#16843d;
+  font-size:12px;
+  font-weight:700;
+  margin-left:5px;
+}
+
+.pack{
+  color:#777;
+  font-size:12px;
+  margin:7px 0 13px;
 }
 
 .add{
   width:100%;
-  border:none;
-  background:#176b3a;
-  color:white;
+  border:1px solid #ff5a1f;
+  background:#fff;
+  color:#ff5a1f;
   padding:10px;
-  border-radius:8px;
-  font-weight:bold;
+  border-radius:5px;
+  font-weight:800;
 }
+
+.add:hover{
+  background:#ff5a1f;
+  color:#fff;
+}
+
+/* DEAL STRIP */
+
+.deal{
+  margin:20px 5%;
+  padding:20px;
+  background:#fff4ef;
+  border:1px solid #ffe0d3;
+  border-radius:7px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.deal h2{
+  font-size:20px;
+}
+
+.deal p{
+  color:#666;
+  font-size:13px;
+  margin-top:5px;
+}
+
+.deal button{
+  background:#ff5a1f;
+  color:white;
+  border:none;
+  padding:10px 18px;
+  border-radius:5px;
+  font-weight:700;
+}
+
+/* TRUST */
+
+.trust{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.trust-box{
+  border:1px solid #eee;
+  padding:20px;
+  border-radius:7px;
+  background:#fff;
+}
+
+.trust-box strong{
+  display:block;
+  margin-bottom:6px;
+}
+
+.trust-box p{
+  font-size:12px;
+  color:#777;
+}
+
+/* FOOTER */
 
 footer{
-  background:#12301e;
-  color:white;
-  text-align:center;
-  padding:30px 20px;
+  margin-top:40px;
+  background:#222;
+  color:#fff;
+  padding:35px 5%;
 }
 
-@media(max-width:700px){
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:30px;
+}
 
-  .hero h1{
-    font-size:40px;
+footer h3{
+  margin-bottom:12px;
+}
+
+footer p,
+footer li{
+  color:#bbb;
+  font-size:13px;
+  line-height:1.8;
+}
+
+footer ul{
+  list-style:none;
+}
+
+.copyright{
+  margin-top:30px;
+  padding-top:20px;
+  border-top:1px solid #444;
+  font-size:12px;
+  color:#999;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .topbar{
+    display:none;
   }
 
-  .categories,
+  header{
+    padding:12px 4%;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  .logo{
+    font-size:18px;
+  }
+
+  .header-links{
+    margin-left:auto;
+    gap:10px;
+  }
+
+  .search{
+    order:3;
+    max-width:none;
+    width:100%;
+  }
+
+  .nav{
+    padding:11px 4%;
+    gap:22px;
+  }
+
+  .hero{
+    margin:12px 4%;
+    min-height:210px;
+  }
+
+  .hero-content{
+    padding:25px;
+  }
+
+  .hero h1{
+    font-size:28px;
+  }
+
+  .hero-art{
+    display:none;
+  }
+
+  .section{
+    padding:22px 4%;
+  }
+
   .products{
     grid-template-columns:repeat(2,1fr);
     gap:10px;
   }
 
   .product-image{
-    height:135px;
-    font-size:43px;
+    height:145px;
+    font-size:52px;
   }
 
-  .category{
-    padding:16px;
+  .product-info{
+    padding:11px;
   }
 
+  .product-name{
+    font-size:13px;
+  }
+
+  .price{
+    font-size:16px;
+  }
+
+  .deal{
+    margin:15px 4%;
+  }
+
+  .trust{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
 }
-
 </style>
 </head>
 
 <body>
 
+<div class="topbar">
+  Quality Seeds • Fertilizers • Farm Essentials
+</div>
+
 <header>
 
   <div class="logo">
-    🌱 Sharma Seeds Center
+    Sharma <span>Seeds Center</span>
   </div>
 
-  <div class="cart">
-    🛒 Cart <span id="cartCount">0</span>
+  <div class="search">
+    <input type="text" placeholder="Search seeds, fertilizers & farm products">
+    <button>⌕</button>
+  </div>
+
+  <div class="header-links">
+    <div>👤 Account</div>
+    <div class="cart">🛒 Cart (<span id="cartCount">0</span>)</div>
   </div>
 
 </header>
 
+<nav class="nav">
+  <a href="#">Home</a>
+  <a href="#categories">Categories</a>
+  <a href="#products">Products</a>
+  <a href="#deals">Deals</a>
+  <a href="#">Orders</a>
+</nav>
 
 <section class="hero">
 
-  <h1>
-    Grow Better.<br>
-    <span>Harvest More.</span>
-  </h1>
+  <div class="hero-content">
 
-  <p>
-    Quality seeds and agricultural products
-    for farmers, gardeners and growers.
-  </p>
+    <small>Sharma Seeds Center</small>
 
-  <a href="#products" class="shop">
-    Shop Now →
-  </a>
+    <h1>
+      Quality products for
+      better farming.
+    </h1>
+
+    <p>
+      Shop seeds, fertilizers and essential agricultural
+      products from one place.
+    </p>
+
+    <button onclick="document.getElementById('products').scrollIntoView()">
+      Shop Now
+    </button>
+
+  </div>
+
+  <div class="hero-art">
+    🌾
+  </div>
 
 </section>
 
+<section class="section" id="categories">
 
-<section class="section">
-
-  <h2>Shop by Category</h2>
+  <div class="section-title">
+    <h2>Shop by Category</h2>
+    <span class="view">View All</span>
+  </div>
 
   <div class="categories">
 
     <div class="category">
-      <div class="icon">🌾</div>
+      <div class="category-icon">🌾</div>
       <h3>Seeds</h3>
-      <p>Quality seeds for better crops.</p>
     </div>
 
     <div class="category">
-      <div class="icon">🌱</div>
+      <div class="category-icon">🌱</div>
       <h3>Fertilizers</h3>
-      <p>Nutrients for healthy plants.</p>
     </div>
 
     <div class="category">
-      <div class="icon">🪴</div>
+      <div class="category-icon">🪴</div>
       <h3>Plant Care</h3>
-      <p>Products for everyday crop care.</p>
     </div>
 
     <div class="category">
-      <div class="icon">🧑‍🌾</div>
+      <div class="category-icon">🧑‍🌾</div>
       <h3>Farm Essentials</h3>
-      <p>Useful farming supplies.</p>
     </div>
 
   </div>
 
 </section>
 
-
 <section class="section" id="products">
 
-  <h2>Featured Products</h2>
+  <div class="section-title">
+    <h2>Popular Products</h2>
+    <span class="view">View All</span>
+  </div>
 
   <div class="products">
 
@@ -283,14 +610,23 @@ footer{
 
       <div class="product-info">
 
-        <div class="tag">Seeds</div>
+        <div class="product-name">
+          Premium Paddy Seeds
+        </div>
 
-        <h3>Premium Paddy Seeds</h3>
+        <span class="rating">★ 4.6</span>
 
-        <div class="price">₹249</div>
+        <div>
+          <span class="price">₹249</span>
+          <span class="old-price">₹299</span>
+          <span class="discount">17% OFF</span>
+        </div>
 
-        <button class="add"
-          onclick="addToCart()">
+        <div class="pack">
+          Pack Size: 1 kg
+        </div>
+
+        <button class="add" onclick="addToCart()">
           Add to Cart
         </button>
 
@@ -305,14 +641,21 @@ footer{
 
       <div class="product-info">
 
-        <div class="tag">Fertilizer</div>
+        <div class="product-name">
+          NPK 19:19:19 Fertilizer
+        </div>
 
-        <h3>NPK 19:19:19</h3>
+        <span class="rating">★ 4.5</span>
 
-        <div class="price">₹250 / kg</div>
+        <div>
+          <span class="price">₹250</span>
+        </div>
 
-        <button class="add"
-          onclick="addToCart()">
+        <div class="pack">
+          Pack Size: 1 kg
+        </div>
+
+        <button class="add" onclick="addToCart()">
           Add to Cart
         </button>
 
@@ -327,14 +670,22 @@ footer{
 
       <div class="product-info">
 
-        <div class="tag">Organic</div>
+        <div class="product-name">
+          Neem Cake Powder
+        </div>
 
-        <h3>Neem Cake Powder</h3>
+        <span class="rating">★ 4.4</span>
 
-        <div class="price">From ₹62</div>
+        <div>
+          <span class="price">₹62</span>
+          <span class="discount">From</span>
+        </div>
 
-        <button class="add"
-          onclick="addToCart()">
+        <div class="pack">
+          Pack Size: 1 kg
+        </div>
+
+        <button class="add" onclick="addToCart()">
           Add to Cart
         </button>
 
@@ -349,14 +700,21 @@ footer{
 
       <div class="product-info">
 
-        <div class="tag">Plant Care</div>
+        <div class="product-name">
+          Humic Acid Liquid Fertilizer
+        </div>
 
-        <h3>Humic Acid</h3>
+        <span class="rating">★ 4.5</span>
 
-        <div class="price">₹325 / L</div>
+        <div>
+          <span class="price">₹325</span>
+        </div>
 
-        <button class="add"
-          onclick="addToCart()">
+        <div class="pack">
+          Pack Size: 1 Liter
+        </div>
+
+        <button class="add" onclick="addToCart()">
           Add to Cart
         </button>
 
@@ -368,21 +726,85 @@ footer{
 
 </section>
 
+<section class="deal" id="deals">
+
+  <div>
+    <h2>Special Deals for Farmers</h2>
+    <p>Discover useful agricultural products at great prices.</p>
+  </div>
+
+  <button onclick="document.getElementById('products').scrollIntoView()">
+    Explore Deals
+  </button>
+
+</section>
+
+<section class="section">
+
+  <div class="section-title">
+    <h2>Why Shop With Us?</h2>
+  </div>
+
+  <div class="trust">
+
+    <div class="trust-box">
+      <strong>Quality Products</strong>
+      <p>Carefully selected agricultural products.</p>
+    </div>
+
+    <div class="trust-box">
+      <strong>Fair Pricing</strong>
+      <p>Competitive prices for everyday farming needs.</p>
+    </div>
+
+    <div class="trust-box">
+      <strong>Easy Ordering</strong>
+      <p>Simple shopping experience from your phone.</p>
+    </div>
+
+    <div class="trust-box">
+      <strong>Local Support</strong>
+      <p>Friendly assistance for your requirements.</p>
+    </div>
+
+  </div>
+
+</section>
 
 <footer>
 
-  <h3>Sharma Seeds Center</h3>
+  <div class="footer-grid">
 
-  <p style="margin-top:8px;">
-    Quality products for better farming.
-  </p>
+    <div>
+      <h3>Sharma Seeds Center</h3>
+      <p>
+        Your trusted destination for seeds,
+        fertilizers and agricultural essentials.
+      </p>
+    </div>
 
-  <p style="margin-top:15px;font-size:12px;">
-    © 2026 Sharma Seeds Center
-  </p>
+    <div>
+      <h3>Quick Links</h3>
+      <ul>
+        <li>Home</li>
+        <li>Products</li>
+        <li>Categories</li>
+        <li>Orders</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Customer Support</h3>
+      <p>Contact details will be added soon.</p>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © 2026 Sharma Seeds Center. All rights reserved.
+  </div>
 
 </footer>
-
 
 <script>
 
@@ -392,8 +814,7 @@ function addToCart(){
 
   cartCount++;
 
-  document.getElementById("cartCount")
-    .textContent = cartCount;
+  document.getElementById("cartCount").textContent = cartCount;
 
 }
 
